@@ -11,6 +11,7 @@
         "laravel/tinker": "^2.9",
         "livewire/livewire": "*",
         "livewire/volt": "^1.0",
+        "openspout/openspout": "^4.24",
         "power-components/livewire-powergrid": "^5.8",
         "wireui/wireui": "^1.19"
     },

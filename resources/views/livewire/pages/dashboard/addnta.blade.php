@@ -25,6 +25,7 @@ new class extends Component
 }; ?>
 
 <section class="space-y-6">
+    <div class="max-w-xl">
     <header>
         <h2 class="text-lg font-medium text-gray-900">
             {{ __('Add New nta-level') }}
@@ -46,4 +47,7 @@ new class extends Component
             </x-action-message>
         </div>
     </form>
+    </div>
+    <livewire:ntalevel-table/>
+
 </section>

@@ -123,5 +123,8 @@ new class extends Component
                 </x-action-message>
             </div>
         </form>
+
+        <livewire:video-table/>
     </section>
+
 </div>

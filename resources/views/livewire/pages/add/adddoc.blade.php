@@ -126,4 +126,6 @@ dd($this);
             </x-action-message>
         </div>
     </form>
+
+    <livewire:document-table/>
 </section>
