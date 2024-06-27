@@ -35,7 +35,7 @@ new class extends Component
             </div>
 
             <div>
-                <p class="mt-4 font-bold sm:text-2xl ">ATC - Help Desk </p>
+                <p class="mt-4 font-bold font-mono sm:text-3xl ">ATC - Help Desk </p>
             </div>
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
