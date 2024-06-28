@@ -2,7 +2,7 @@
 
 namespace App\Livewire;
 
-use App\Models\Document;
+use App\Models\Ntalevel;
 use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use PowerComponents\LivewirePowerGrid\Button;
@@ -16,7 +16,7 @@ use PowerComponents\LivewirePowerGrid\PowerGridFields;
 use PowerComponents\LivewirePowerGrid\PowerGridComponent;
 use PowerComponents\LivewirePowerGrid\Traits\WithExport;
 
-final class DocumentTable extends PowerGridComponent
+final class NtalevelTable extends PowerGridComponent
 {
     use WithExport;
 
@@ -37,13 +37,7 @@ final class DocumentTable extends PowerGridComponent
 
     public function datasource(): Builder
     {
-        if (auth()->user()->role_id == 1) {
-            return Document::query();
-        }
-        else {
-            return Document::query()->where('user_id',auth()->user()->id);
-        }
-
+        return Ntalevel::query();
     }
 
     public function relationSearch(): array
@@ -55,19 +49,7 @@ final class DocumentTable extends PowerGridComponent
     {
         return PowerGrid::fields()
             ->add('id')
-            ->add('path')
-            ->add('course_id')
-            ->add('ntalevel_id')
-            ->add('semister_id')
-            ->add('course_name', function(Document $model) {
-                return $model->course->name; // Assuming the Course model has a 'name' attribute
-            })
-            ->add('ntalevel_name', function(Document $model) {
-                return $model->ntalevel->name; // Assuming the Course model has a 'name' attribute
-            })
-
-            ->add('title')
-            ->add('user_id')
+            ->add('name')
             ->add('created_at');
     }
 
@@ -75,19 +57,10 @@ final class DocumentTable extends PowerGridComponent
     {
         return [
             Column::make('Id', 'id'),
-            Column::make('Path', 'path')
+            Column::make('Name', 'name')
                 ->sortable()
                 ->searchable(),
 
-            Column::make('Course ', 'course_name'),
-            Column::make('Ntalevel ', 'ntalevel_name'),
-            Column::make('Semister ', 'semister_id')
-                ->sortable()
-                ->searchable(),
-
-            Column::make('Title', 'title')
-                ->sortable()
-                ->searchable(),
 
             Column::make('Created at', 'created_at')
                 ->sortable()
@@ -109,7 +82,7 @@ final class DocumentTable extends PowerGridComponent
         $this->js('alert('.$rowId.')');
     }
 
-    public function actions(Document $row): array
+    public function actions(Ntalevel $row): array
     {
         return [
             Button::add('edit')

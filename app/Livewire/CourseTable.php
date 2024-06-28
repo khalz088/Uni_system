@@ -51,6 +51,9 @@ final class CourseTable extends PowerGridComponent
             ->add('id')
             ->add('name')
             ->add('department_id')
+            ->add('department_name', function(Course $model) {
+                return $model->department->name; // Assuming the Course model has a 'name' attribute
+            })
             ->add('created_at');
     }
 
@@ -62,9 +65,7 @@ final class CourseTable extends PowerGridComponent
                 ->sortable()
                 ->searchable(),
 
-            Column::make('Department id', 'department_id'),
-            Column::make('Created at', 'created_at_formatted', 'created_at')
-                ->sortable(),
+            Column::make('Department', 'department_name'),
 
             Column::make('Created at', 'created_at')
                 ->sortable()

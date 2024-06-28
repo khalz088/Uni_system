@@ -71,7 +71,7 @@
                                     <p class="flex justify-center">Videos</p>
                                 </div>
                             </a>
-                            <a href="" class="p-4 hover:border-2 hover:animate-shake hover:shadow-lg w-36 rounded ">
+                            <a href="{{route('add.timetable')}}" class="p-4 hover:border-2 hover:animate-shake hover:shadow-lg w-36 rounded ">
                                 <div  >
                                     <div class="justify-center flex">
 

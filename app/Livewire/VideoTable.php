@@ -37,7 +37,13 @@ final class VideoTable extends PowerGridComponent
 
     public function datasource(): Builder
     {
-        return Video::query();
+        if (auth()->user()->role_id == 1) {
+            return Video::query();
+        }
+        else {
+            return Video::query()->where('user_id',auth()->user()->id);
+        }
+
     }
 
     public function relationSearch(): array
@@ -51,6 +57,12 @@ final class VideoTable extends PowerGridComponent
             ->add('id')
             ->add('type')
             ->add('path')
+            ->add('course_name', function(Video $model) {
+                return $model->course->name; // Assuming the Course model has a 'name' attribute
+            })
+            ->add('ntalevel_name', function(Video $model) {
+                return $model->ntalevel->name; // Assuming the Course model has a 'name' attribute
+            })
             ->add('course_id')
             ->add('ntalevel_id')
             ->add('title')
@@ -62,23 +74,18 @@ final class VideoTable extends PowerGridComponent
     {
         return [
             Column::make('Id', 'id'),
-            Column::make('Type', 'type')
-                ->sortable()
-                ->searchable(),
 
             Column::make('Path', 'path')
                 ->sortable()
                 ->searchable(),
 
-            Column::make('Course id', 'course_id'),
-            Column::make('Ntalevel id', 'ntalevel_id'),
+
+            Column::make('Course ', 'course_name'),
+            Column::make('Ntalevel ', 'ntalevel_name'),
+            
             Column::make('Title', 'title')
                 ->sortable()
                 ->searchable(),
-
-            Column::make('User id', 'user_id'),
-            Column::make('Created at', 'created_at_formatted', 'created_at')
-                ->sortable(),
 
             Column::make('Created at', 'created_at')
                 ->sortable()

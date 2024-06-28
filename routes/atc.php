@@ -15,6 +15,8 @@ Route::middleware('auth')->group(function () {
 
     Route::view('/add_vid','addvid')->name('add.vid');
 
+    Route::view('/add_timetable', 'addtable')->name('add.timetable');
+
     Volt::route('doc' , 'pages.doc.doc1' )->name('doc1');
 
     Volt::route('document/{course}' , 'pages.doc.doc2')->name('doc2');
@@ -32,4 +34,6 @@ Route::middleware('auth')->group(function () {
    Volt::route('lecture_chatroom', 'pages.chat.lecturechat')->name('lecture');
 
    Volt::route('hod_chatroom' , 'pages.chat.hodchat')->name('hod');
+
+
 });
