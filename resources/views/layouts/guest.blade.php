@@ -15,10 +15,13 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <wireui:scripts />
     </head>
-    <body class="font-sans text-gray-900 antialiased">
-    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100" style="background-image: url('{{ asset('login.jpg') }}'); background-size: cover; background-position: center;">
-            <div class="w-full   sm:max-w-md mt-6 animate-fade-left px-6 py-4 bg-white  shadow-xl  border-2 border-green-100 overflow-hidden sm:rounded-lg">
+    <body class="font-sans text-gray-900 bg-white antialiased "  style="background-image: url('{{ asset('login.jpg') }}'); background-size: cover; background-position: center;">
+    <div class="grid grid-cols-1 sm:grid-cols-2">
+        <div>
 
+        </div>
+    <div class="min-h-screen opacity-80 flex flex-col sm:justify-center items-center pt-6 sm:pt-0 ">
+            <div class="w-full sm:max-w-md  animate-fade-left px-6 py-4 bg-white    border-2 border-green-100 overflow-hidden sm:rounded-lg">
 
                 <div class=" flex flex-col sm:justify-center items-center pb-6">
                     <div>
@@ -32,5 +35,7 @@
                 {{ $slot }}
             </div>
         </div>
+    </div>
+
     </body>
 </html>
