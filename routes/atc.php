@@ -29,11 +29,6 @@ Route::middleware('auth')->group(function () {
 
     Volt::route('video_semister/{course}/{ntalevel}', 'pages.vid.vid3')->name('vid3');
 
-   Volt::route('soateco_chatroom', 'pages.chat.soatecochat')->name('soateco');
-
-   Volt::route('lecture_chatroom', 'pages.chat.lecturechat')->name('lecture');
-
-   Volt::route('hod_chatroom' , 'pages.chat.hodchat')->name('hod');
 
 
 });

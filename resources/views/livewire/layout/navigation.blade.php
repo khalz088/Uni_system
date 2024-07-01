@@ -16,14 +16,14 @@ new class extends Component
     }
 }; ?>
 
-<nav x-data="{ open: false }" class="bg-white border-b-2 border-gray-100">
+<nav x-data="{ open: false }" class="bg-white  ">
     <!-- Primary Navigation Menu -->
     <div class=" mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}" wire:navigate>
+                    <a href="/" wire:navigate>
                         <img src="{{asset('atclogo.jpg')}}" class="h-14 w-14" />
                     </a>
                 </div>
@@ -35,7 +35,7 @@ new class extends Component
             </div>
 
             <div>
-                <p class="mt-4 font-bold font-mono sm:text-3xl ">ATC - Help Desk </p>
+                <p class="mt-4 font-bold font-mono sm:text-3xl "><span class="text-green-800">ATC</span> - Help Desk </p>
             </div>
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
