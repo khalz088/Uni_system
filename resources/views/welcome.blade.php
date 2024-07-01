@@ -48,7 +48,7 @@
                     </h2>
                     <p class="text-base text-gray-700 md:text-lg">
                         Welcome to the Arusha Technical College Help Desk, your go-to resource for all the essential materials and information you need during your time at our esteemed institution.
-                        Our goal is to support your academic journey and ensure you have access to everything you need to succeed. Below is what we offer ,
+                        Our goal is to support your academic journey and ensure you have access to everything you need to succeed.
                     </p>
                 </div>
 
@@ -95,7 +95,7 @@
                     </div>
                 </div>
             </div>
-            <div >
+            <div class="ml-10">
                 <img class="object-cover hidden sm:flex w-full h-56 rounded shadow-lg sm:h-96" src="{{asset('wel.jpg')}}" alt="" />
             </div>
         </div>
