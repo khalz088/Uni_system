@@ -5,6 +5,7 @@
             <div class="overflow-hidden ">
                 <div class="p-6 text-gray-900">
 
+                    @if(auth()->user()->role_id == 0)
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-5">
 
                         <a href="{{route('profile')}}" class="p-4 hover:border-2 hover:animate-shake hover:shadow-lg w-36  rounded  ">
@@ -34,6 +35,7 @@
                             <div  >
                                 <div class="justify-center flex">
                                     <div>
+
                                         <svg height="50" width="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M18.3121 23.3511C17.4463 23.0228 16.7081 22.5979 16.1266 22.1995C14.8513 22.7159 13.4578 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 14.2788 22.306 16.3983 21.1179 18.1551C21.0425 19.6077 21.8054 20.9202 22.5972 22.0816C23.2907 23.0987 23.1167 23.9184 21.8236 23.9917C21.244 24.0245 19.9903 23.9874 18.3121 23.3511ZM3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 13.9503 20.3808 15.7531 19.328 17.2262C18.8622 17.8782 19.1018 19.0998 19.2616 19.8011C19.4167 20.4818 19.7532 21.2051 20.0856 21.8123C19.7674 21.7356 19.4111 21.6288 19.0212 21.481C18.1239 21.1407 17.3824 20.6624 16.8594 20.261C16.5626 20.0332 16.1635 19.9902 15.825 20.1494C14.6654 20.6947 13.3697 21 12 21C7.02944 21 3 16.9706 3 12ZM7 9C6.44772 9 6 9.44771 6 10C6 10.5523 6.44772 11 7 11H17C17.5523 11 18 10.5523 18 10C18 9.44771 17.5523 9 17 9H7ZM7 13C6.44772 13 6 13.4477 6 14C6 14.5523 6.44772 15 7 15H17C17.5523 15 18 14.5523 18 14C18 13.4477 17.5523 13 17 13H7Z" fill="#000000"></path> </g></svg>
 
                                     </div>
@@ -51,126 +53,13 @@
                                 <p class="flex justify-center">Time-table</p>
                             </div>
                         </a>
-
-
-
-                        @if(auth()->user()->role_id == 1)
-                            <a href="{{route('add-doc')}}" class="p-4 hover:border-2 hover:animate-shake hover:shadow-lg w-36 rounded ">
-                                <div  >
-                                    <div class="justify-center flex">
-                                        <svg viewBox="0 0 512 512" height="50"  width="50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>add-document-note</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="icon" fill="#000000" transform="translate(85.333333, 42.666667)"> <path d="M341.333333,277.333333 L341.332667,341.332333 L405.333333,341.333333 L405.333333,384 L341.332667,383.999333 L341.333333,448 L298.666667,448 L298.666667,383.999333 L234.666667,384 L234.666667,341.333333 L298.666667,341.332333 L298.666667,277.333333 L341.333333,277.333333 Z M234.666667,3.55271368e-14 L341.333333,106.666667 L341.333,256 L298.666,256 L298.666667,124.339779 L216.993555,42.6666667 L42.6666667,42.6666667 L42.6666667,384 L213.333,383.999 L213.333333,405.333333 L277.333333,405.333333 L277.333,426.666 L1.42108547e-14,426.666667 L1.42108547e-14,3.55271368e-14 L234.666667,3.55271368e-14 Z M213.333333,298.666667 L213.333333,341.333333 L64,341.333333 L64,298.666667 L213.333333,298.666667 Z M196,85.3333333 L256,145.333333 L124,277.333333 L64,277.333333 L64,217.333333 L196,85.3333333 Z M157.304,169.265333 L96,230.570667 L96,245.333333 L110.72,245.333333 L172.046,184.007333 L157.304,169.265333 Z M195.989333,130.581333 L179.932,146.637333 L194.674,161.379333 L210.730667,145.322667 L195.989333,130.581333 Z" id="Combined-Shape"> </path> </g> </g> </g></svg>
-                                    </div>
-                                    <p class="flex justify-center">Documents</p>
-                                </div>
-                            </a>
-                            <a href="{{route('add.vid')}}" class="p-4 hover:border-2 hover:animate-shake hover:shadow-lg w-36 rounded ">
-                                <div  >
-                                    <div class="justify-center flex">
-                                        <svg height="50"  width="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9.5 9V15M6.5 12H12.5M16 10L18.5768 8.45392C19.3699 7.97803 19.7665 7.74009 20.0928 7.77051C20.3773 7.79703 20.6369 7.944 20.806 8.17433C21 8.43848 21 8.90095 21 9.8259V14.1741C21 15.099 21 15.5615 20.806 15.8257C20.6369 16.056 20.3773 16.203 20.0928 16.2295C19.7665 16.2599 19.3699 16.022 18.5768 15.5461L16 14M6.2 18H12.8C13.9201 18 14.4802 18 14.908 17.782C15.2843 17.5903 15.5903 17.2843 15.782 16.908C16 16.4802 16 15.9201 16 14.8V9.2C16 8.0799 16 7.51984 15.782 7.09202C15.5903 6.71569 15.2843 6.40973 14.908 6.21799C14.4802 6 13.9201 6 12.8 6H6.2C5.0799 6 4.51984 6 4.09202 6.21799C3.71569 6.40973 3.40973 6.71569 3.21799 7.09202C3 7.51984 3 8.07989 3 9.2V14.8C3 15.9201 3 16.4802 3.21799 16.908C3.40973 17.2843 3.71569 17.5903 4.09202 17.782C4.51984 18 5.07989 18 6.2 18Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-                                    </div>
-                                    <p class="flex justify-center">Videos</p>
-                                </div>
-                            </a>
-                            <a href="{{route('add.timetable')}}" class="p-4 hover:border-2 hover:animate-shake hover:shadow-lg w-36 rounded ">
-                                <div  >
-                                    <div class="justify-center flex">
-
-                                        <svg height="50"  width="50" fill="#000000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="table-add"> <path d="M22,12.1V6V4V0H-1v4v2v18h14h2h2c3.9,0,7-3.1,7-7C24,15.1,23.2,13.4,22,12.1z M20,10h-5V6h5V10z M10.1,18 c0.2,1.6,1,2.9,2,4H8v-4H10.1z M10.1,16H8v-4h4.1C11,13.1,10.3,14.4,10.1,16z M6,16H1v-4h5V16z M13,6v4H8V6H13z M1,2h19v2H1V2z M6,6v4H1V6H6z M1,18h5v4H1V18z M17,22c-2.8,0-5-2.2-5-5s2.2-5,5-5s5,2.2,5,5S19.8,22,17,22z"></path> <polygon points="18,13.6 16,13.6 16,16 13.6,16 13.6,18 16,18 16,20.4 18,20.4 18,18 20.4,18 20.4,16 18,16 "></polygon> </g> </g></svg>
-
-                                    </div>
-                                    <p class="flex justify-center">Timetable</p>
-                                </div>
-                            </a>
-                            <a href="{{route('add.index')}}" class="p-4 hover:border-2 hover:animate-shake hover:shadow-lg w-36 rounded  ">
-                                <div >
-                                    <div class="justify-center flex">
-                                        <div>
-                                            <svg height="50" width="50"  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Edit / Add_Plus_Square"> <path id="Vector" d="M8 12H12M12 12H16M12 12V16M12 12V8M4 16.8002V7.2002C4 6.08009 4 5.51962 4.21799 5.0918C4.40973 4.71547 4.71547 4.40973 5.0918 4.21799C5.51962 4 6.08009 4 7.2002 4H16.8002C17.9203 4 18.4801 4 18.9079 4.21799C19.2842 4.40973 19.5905 4.71547 19.7822 5.0918C20.0002 5.51962 20.0002 6.07967 20.0002 7.19978V16.7998C20.0002 17.9199 20.0002 18.48 19.7822 18.9078C19.5905 19.2841 19.2842 19.5905 18.9079 19.7822C18.4805 20 17.9215 20 16.8036 20H7.19691C6.07899 20 5.5192 20 5.0918 19.7822C4.71547 19.5905 4.40973 19.2842 4.21799 18.9079C4 18.4801 4 17.9203 4 16.8002Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g> </g></svg>
-                                        </div>
-                                    </div>
-                                    <p class="flex justify-center">all-add</p>
-                                </div>
-                            </a>
-                            <a href="{{route('doc1')}}" class="p-4 hover:border-2 hover:animate-shake hover:shadow-lg w-36 rounded ">
-                                <div  >
-                                    <div class="justify-center flex">
-                                        <div>
-                                            <svg height="50" width="50" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:none;stroke:#020202;stroke-miterlimit:10;stroke-width:1.91px;}</style></defs><line class="cls-1" x1="6.27" y1="14.86" x2="13.91" y2="14.86"></line><line class="cls-1" x1="6.27" y1="11.05" x2="13.91" y2="11.05"></line><line class="cls-1" x1="6.27" y1="18.68" x2="13.91" y2="18.68"></line><polygon class="cls-1" points="16.77 8.18 16.77 22.5 3.41 22.5 3.41 5.32 13.91 5.32 16.77 8.18"></polygon><polyline class="cls-1" points="16.77 18.68 20.59 18.68 20.59 4.36 17.73 1.5 7.23 1.5 7.23 5.32"></polyline></g></svg>
-                                        </div>
-                                    </div>
-                                    <p class="flex justify-center">Documents</p>
-                                </div>
-                            </a>
-                            <a href="{{route('vid1')}}" class="p-4 hover:border-2 hover:animate-shake hover:shadow-lg w-36 rounded ">
-                                <div  >
-                                    <div class="justify-center flex">
-                                        <div>
-                                            <svg height="50" width="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16 10L18.5768 8.45392C19.3699 7.97803 19.7665 7.74009 20.0928 7.77051C20.3773 7.79703 20.6369 7.944 20.806 8.17433C21 8.43848 21 8.90095 21 9.8259V14.1741C21 15.099 21 15.5615 20.806 15.8257C20.6369 16.056 20.3773 16.203 20.0928 16.2295C19.7665 16.2599 19.3699 16.022 18.5768 15.5461L16 14M6.2 18H12.8C13.9201 18 14.4802 18 14.908 17.782C15.2843 17.5903 15.5903 17.2843 15.782 16.908C16 16.4802 16 15.9201 16 14.8V9.2C16 8.0799 16 7.51984 15.782 7.09202C15.5903 6.71569 15.2843 6.40973 14.908 6.21799C14.4802 6 13.9201 6 12.8 6H6.2C5.0799 6 4.51984 6 4.09202 6.21799C3.71569 6.40973 3.40973 6.71569 3.21799 7.09202C3 7.51984 3 8.07989 3 9.2V14.8C3 15.9201 3 16.4802 3.21799 16.908C3.40973 17.2843 3.71569 17.5903 4.09202 17.782C4.51984 18 5.07989 18 6.2 18Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-                                        </div>
-                                    </div>
-                                    <p class="flex justify-center">Videos</p>
-                                </div>
-                            </a>
-                            <a href="{{route('user.index')}}" class="p-4 hover:border-2 hover:animate-shake hover:shadow-lg w-36 rounded  ">
-                                <div >
-                                    <div class="justify-center flex">
-                                        <div>
-
-                                            <svg   fill="#000000" height="50" width="50"  version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M352.062,314.075c-19.834-20.912-43.665-36.124-68.765-44.408c25.008-22.555,40.754-55.191,40.754-91.439 c0-67.899-55.24-123.139-123.139-123.139S77.772,110.329,77.772,178.228c0,36.248,15.746,68.884,40.754,91.439 c-25.101,8.285-48.932,23.498-68.766,44.409C17.672,347.906,0,391.728,0,437.468v19.443h401.823v-19.443 C401.823,391.728,384.15,347.906,352.062,314.075z M116.658,178.228c0-46.457,37.796-84.253,84.253-84.253 c46.457,0,84.253,37.796,84.253,84.253s-37.796,84.253-84.253,84.253C154.454,262.481,116.658,224.685,116.658,178.228z M40.256,418.025c9.65-67.94,68.591-116.658,121.769-116.658h77.772c53.178,0,112.119,48.718,121.769,116.658H40.256z"></path> </g> </g> <g> <g> <polygon points="453.671,223.595 453.671,165.266 414.785,165.266 414.785,223.595 356.456,223.595 356.456,262.481 414.785,262.481 414.785,320.81 453.671,320.81 453.671,262.481 512,262.481 512,223.595 "></polygon> </g> </g> </g></svg>
-                                        </div>
-                                    </div>
-                                    <p class="justify-center flex">add-users</p>
-                                </div>
-                            </a>
-
-
-
-                        @elseif(auth()->user()->role_id == 2)
-                            <a href="{{route('doc1')}}" class="p-4 hover:border-2 hover:animate-shake hover:shadow-lg w-36 rounded ">
-                                <div  >
-                                    <div class="justify-center flex">
-                                        <div>
-                                            <svg height="50" width="50" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:none;stroke:#020202;stroke-miterlimit:10;stroke-width:1.91px;}</style></defs><line class="cls-1" x1="6.27" y1="14.86" x2="13.91" y2="14.86"></line><line class="cls-1" x1="6.27" y1="11.05" x2="13.91" y2="11.05"></line><line class="cls-1" x1="6.27" y1="18.68" x2="13.91" y2="18.68"></line><polygon class="cls-1" points="16.77 8.18 16.77 22.5 3.41 22.5 3.41 5.32 13.91 5.32 16.77 8.18"></polygon><polyline class="cls-1" points="16.77 18.68 20.59 18.68 20.59 4.36 17.73 1.5 7.23 1.5 7.23 5.32"></polyline></g></svg>
-                                        </div>
-                                    </div>
-                                    <p class="flex justify-center">Documents</p>
-                                </div>
-                            </a>
-                            <a href="{{route('vid1')}}" class="p-4 hover:border-2 hover:animate-shake hover:shadow-lg w-36 rounded ">
-                                <div  >
-                                    <div class="justify-center flex">
-                                        <div>
-                                            <svg height="50" width="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16 10L18.5768 8.45392C19.3699 7.97803 19.7665 7.74009 20.0928 7.77051C20.3773 7.79703 20.6369 7.944 20.806 8.17433C21 8.43848 21 8.90095 21 9.8259V14.1741C21 15.099 21 15.5615 20.806 15.8257C20.6369 16.056 20.3773 16.203 20.0928 16.2295C19.7665 16.2599 19.3699 16.022 18.5768 15.5461L16 14M6.2 18H12.8C13.9201 18 14.4802 18 14.908 17.782C15.2843 17.5903 15.5903 17.2843 15.782 16.908C16 16.4802 16 15.9201 16 14.8V9.2C16 8.0799 16 7.51984 15.782 7.09202C15.5903 6.71569 15.2843 6.40973 14.908 6.21799C14.4802 6 13.9201 6 12.8 6H6.2C5.0799 6 4.51984 6 4.09202 6.21799C3.71569 6.40973 3.40973 6.71569 3.21799 7.09202C3 7.51984 3 8.07989 3 9.2V14.8C3 15.9201 3 16.4802 3.21799 16.908C3.40973 17.2843 3.71569 17.5903 4.09202 17.782C4.51984 18 5.07989 18 6.2 18Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-                                        </div>
-                                    </div>
-                                    <p class="flex justify-center">Videos</p>
-                                </div>
-                            </a>
-                            <a href="{{route('add-doc')}}" class="p-4 hover:border-2 hover:animate-shake hover:shadow-lg w-36 rounded ">
-                                <div  >
-                                    <div class="justify-center flex">
-                                        <svg viewBox="0 0 512 512" height="50"  width="50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>add-document-note</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="icon" fill="#000000" transform="translate(85.333333, 42.666667)"> <path d="M341.333333,277.333333 L341.332667,341.332333 L405.333333,341.333333 L405.333333,384 L341.332667,383.999333 L341.333333,448 L298.666667,448 L298.666667,383.999333 L234.666667,384 L234.666667,341.333333 L298.666667,341.332333 L298.666667,277.333333 L341.333333,277.333333 Z M234.666667,3.55271368e-14 L341.333333,106.666667 L341.333,256 L298.666,256 L298.666667,124.339779 L216.993555,42.6666667 L42.6666667,42.6666667 L42.6666667,384 L213.333,383.999 L213.333333,405.333333 L277.333333,405.333333 L277.333,426.666 L1.42108547e-14,426.666667 L1.42108547e-14,3.55271368e-14 L234.666667,3.55271368e-14 Z M213.333333,298.666667 L213.333333,341.333333 L64,341.333333 L64,298.666667 L213.333333,298.666667 Z M196,85.3333333 L256,145.333333 L124,277.333333 L64,277.333333 L64,217.333333 L196,85.3333333 Z M157.304,169.265333 L96,230.570667 L96,245.333333 L110.72,245.333333 L172.046,184.007333 L157.304,169.265333 Z M195.989333,130.581333 L179.932,146.637333 L194.674,161.379333 L210.730667,145.322667 L195.989333,130.581333 Z" id="Combined-Shape"> </path> </g> </g> </g></svg>
-                                    </div>
-                                    <p class="flex justify-center">Documents</p>
-                                </div>
-                            </a>
-                            <a href="{{route('add.vid')}}" class="p-4 hover:border-2 hover:animate-shake hover:shadow-lg w-36 rounded ">
-                                <div  >
-                                    <div class="justify-center flex">
-                                        <svg height="50"  width="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9.5 9V15M6.5 12H12.5M16 10L18.5768 8.45392C19.3699 7.97803 19.7665 7.74009 20.0928 7.77051C20.3773 7.79703 20.6369 7.944 20.806 8.17433C21 8.43848 21 8.90095 21 9.8259V14.1741C21 15.099 21 15.5615 20.806 15.8257C20.6369 16.056 20.3773 16.203 20.0928 16.2295C19.7665 16.2599 19.3699 16.022 18.5768 15.5461L16 14M6.2 18H12.8C13.9201 18 14.4802 18 14.908 17.782C15.2843 17.5903 15.5903 17.2843 15.782 16.908C16 16.4802 16 15.9201 16 14.8V9.2C16 8.0799 16 7.51984 15.782 7.09202C15.5903 6.71569 15.2843 6.40973 14.908 6.21799C14.4802 6 13.9201 6 12.8 6H6.2C5.0799 6 4.51984 6 4.09202 6.21799C3.71569 6.40973 3.40973 6.71569 3.21799 7.09202C3 7.51984 3 8.07989 3 9.2V14.8C3 15.9201 3 16.4802 3.21799 16.908C3.40973 17.2843 3.71569 17.5903 4.09202 17.782C4.51984 18 5.07989 18 6.2 18Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-                                    </div>
-                                    <p class="flex justify-center">Videos</p>
-                                </div>
-                            </a>
-
-
-                        @else
-
                             <a href="{{route('doc3',['course' => auth()->user()->course_id , 'ntalevel' => auth()->user()->ntalevel_id])}}" class="p-4 hover:border-2 hover:animate-shake hover:shadow-lg w-36 rounded ">
                                 <div  >
                                     <div class="justify-center flex">
                                         <div>
+
                                             <svg height="50" width="50" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:none;stroke:#020202;stroke-miterlimit:10;stroke-width:1.91px;}</style></defs><line class="cls-1" x1="6.27" y1="14.86" x2="13.91" y2="14.86"></line><line class="cls-1" x1="6.27" y1="11.05" x2="13.91" y2="11.05"></line><line class="cls-1" x1="6.27" y1="18.68" x2="13.91" y2="18.68"></line><polygon class="cls-1" points="16.77 8.18 16.77 22.5 3.41 22.5 3.41 5.32 13.91 5.32 16.77 8.18"></polygon><polyline class="cls-1" points="16.77 18.68 20.59 18.68 20.59 4.36 17.73 1.5 7.23 1.5 7.23 5.32"></polyline></g></svg>
+
                                         </div>
                                     </div>
                                     <p class="flex justify-center">Documents</p>
@@ -180,15 +69,129 @@
                                 <div  >
                                     <div class="justify-center flex">
                                         <div>
+
                                             <svg height="50" width="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16 10L18.5768 8.45392C19.3699 7.97803 19.7665 7.74009 20.0928 7.77051C20.3773 7.79703 20.6369 7.944 20.806 8.17433C21 8.43848 21 8.90095 21 9.8259V14.1741C21 15.099 21 15.5615 20.806 15.8257C20.6369 16.056 20.3773 16.203 20.0928 16.2295C19.7665 16.2599 19.3699 16.022 18.5768 15.5461L16 14M6.2 18H12.8C13.9201 18 14.4802 18 14.908 17.782C15.2843 17.5903 15.5903 17.2843 15.782 16.908C16 16.4802 16 15.9201 16 14.8V9.2C16 8.0799 16 7.51984 15.782 7.09202C15.5903 6.71569 15.2843 6.40973 14.908 6.21799C14.4802 6 13.9201 6 12.8 6H6.2C5.0799 6 4.51984 6 4.09202 6.21799C3.71569 6.40973 3.40973 6.71569 3.21799 7.09202C3 7.51984 3 8.07989 3 9.2V14.8C3 15.9201 3 16.4802 3.21799 16.908C3.40973 17.2843 3.71569 17.5903 4.09202 17.782C4.51984 18 5.07989 18 6.2 18Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+
                                         </div>
                                     </div>
                                     <p class="flex justify-center">Videos</p>
                                 </div>
                             </a>
-                        @endif
 
                     </div>
+
+                    @elseif(auth()->user()->role_id == 1)
+
+                        <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+                            <div class="grid grid-cols-1  row-gap-8 sm:grid-cols-3">
+                                <div class="text-center md:border-r">
+                                    <h6 class="text-4xl font-bold lg:text-5xl xl:text-6xl">{{\App\Models\User::where('role_id',2)->count()}}</h6>
+                                    <p class="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base">
+                                        Lecture
+                                    </p>
+                                </div>
+                                <div class="text-center md:border-r">
+                                    <h6 class="text-4xl font-bold lg:text-5xl xl:text-6xl">{{\App\Models\User::where('role_id',0)->count()}}</h6>
+                                    <p class="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base">
+                                        Students
+                                    </p>
+                                </div>
+                                <div class="text-center md:border-r">
+                                    <h6 class="text-4xl font-bold lg:text-5xl xl:text-6xl">{{\App\Models\User::where('role_id',1)->count()}}</h6>
+                                    <p class="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base">
+                                        Admins
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2  grid  grid-cols-2 justify-center items-center gap-4">
+                            <!-- Comments -->
+                            <a href="{{route('vid1')}}"
+                               class="flex h-20 w-full flex-col items-center justify-center rounded-md border border-dashed border-gray-200 transition-colors duration-100 ease-in-out hover:border-gray-400/80">
+                                <div class="flex flex-row items-center justify-center">
+
+
+                                    <svg height="24" width="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16 10L18.5768 8.45392C19.3699 7.97803 19.7665 7.74009 20.0928 7.77051C20.3773 7.79703 20.6369 7.944 20.806 8.17433C21 8.43848 21 8.90095 21 9.8259V14.1741C21 15.099 21 15.5615 20.806 15.8257C20.6369 16.056 20.3773 16.203 20.0928 16.2295C19.7665 16.2599 19.3699 16.022 18.5768 15.5461L16 14M6.2 18H12.8C13.9201 18 14.4802 18 14.908 17.782C15.2843 17.5903 15.5903 17.2843 15.782 16.908C16 16.4802 16 15.9201 16 14.8V9.2C16 8.0799 16 7.51984 15.782 7.09202C15.5903 6.71569 15.2843 6.40973 14.908 6.21799C14.4802 6 13.9201 6 12.8 6H6.2C5.0799 6 4.51984 6 4.09202 6.21799C3.71569 6.40973 3.40973 6.71569 3.21799 7.09202C3 7.51984 3 8.07989 3 9.2V14.8C3 15.9201 3 16.4802 3.21799 16.908C3.40973 17.2843 3.71569 17.5903 4.09202 17.782C4.51984 18 5.07989 18 6.2 18Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+
+
+                                    <span class="font-bold text-gray-600">
+                                        @if(auth()->user()->role_id == 1)
+                                            {{\App\Models\Video::count()}}
+                                        @elseif(auth()->user()->role_id == 2)
+                                            {{\App\Models\Video::where('user_id', auth()->user()->id)->count()}}
+                                        @endif
+                                    </span>
+                                </div>
+
+                                <div class="mt-2 text-sm text-gray-400">Videos</div>
+                            </a>
+
+                            <!-- Projects -->
+                            <a href="{{route('doc1')}}"
+                               class="flex h-20 w-full flex-col items-center justify-center rounded-md border border-dashed border-gray-200 transition-colors duration-100 ease-in-out hover:border-gray-400/80">
+                                <div class="flex flex-row items-center justify-center">
+
+
+                                    <svg height="24" width="24" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:none;stroke:#020202;stroke-miterlimit:10;stroke-width:1.91px;}</style></defs><line class="cls-1" x1="6.27" y1="14.86" x2="13.91" y2="14.86"></line><line class="cls-1" x1="6.27" y1="11.05" x2="13.91" y2="11.05"></line><line class="cls-1" x1="6.27" y1="18.68" x2="13.91" y2="18.68"></line><polygon class="cls-1" points="16.77 8.18 16.77 22.5 3.41 22.5 3.41 5.32 13.91 5.32 16.77 8.18"></polygon><polyline class="cls-1" points="16.77 18.68 20.59 18.68 20.59 4.36 17.73 1.5 7.23 1.5 7.23 5.32"></polyline></g></svg>
+
+                                    <span class="font-bold text-gray-600">
+                                          @if(auth()->user()->role_id == 1)
+                                            {{\App\Models\Document::count()}}
+                                        @elseif(auth()->user()->role_id == 2)
+                                            {{\App\Models\Document::where('user_id', auth()->user()->id)->count()}}
+                                        @endif
+                                    </span>
+                                </div>
+
+                                <div class="mt-2 text-sm text-gray-400">Documents</div>
+                            </a>
+                        </div>
+
+                    @elseif(auth()->user()->role_id == 2)
+                        <div class="mt-2  grid  grid-cols-2 justify-center items-center gap-4">
+                            <!-- Comments -->
+                            <a href="{{route('vid1')}}"
+                               class="flex h-20 w-full flex-col items-center justify-center rounded-md border border-dashed border-gray-200 transition-colors duration-100 ease-in-out hover:border-gray-400/80">
+                                <div class="flex flex-row items-center justify-center">
+
+
+                                    <svg height="24" width="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16 10L18.5768 8.45392C19.3699 7.97803 19.7665 7.74009 20.0928 7.77051C20.3773 7.79703 20.6369 7.944 20.806 8.17433C21 8.43848 21 8.90095 21 9.8259V14.1741C21 15.099 21 15.5615 20.806 15.8257C20.6369 16.056 20.3773 16.203 20.0928 16.2295C19.7665 16.2599 19.3699 16.022 18.5768 15.5461L16 14M6.2 18H12.8C13.9201 18 14.4802 18 14.908 17.782C15.2843 17.5903 15.5903 17.2843 15.782 16.908C16 16.4802 16 15.9201 16 14.8V9.2C16 8.0799 16 7.51984 15.782 7.09202C15.5903 6.71569 15.2843 6.40973 14.908 6.21799C14.4802 6 13.9201 6 12.8 6H6.2C5.0799 6 4.51984 6 4.09202 6.21799C3.71569 6.40973 3.40973 6.71569 3.21799 7.09202C3 7.51984 3 8.07989 3 9.2V14.8C3 15.9201 3 16.4802 3.21799 16.908C3.40973 17.2843 3.71569 17.5903 4.09202 17.782C4.51984 18 5.07989 18 6.2 18Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+
+
+                                    <span class="font-bold text-gray-600">
+                                        @if(auth()->user()->role_id == 1)
+                                            {{\App\Models\Video::count()}}
+                                        @elseif(auth()->user()->role_id == 2)
+                                            {{\App\Models\Video::where('user_id', auth()->user()->id)->count()}}
+                                        @endif
+                                    </span>
+                                </div>
+
+                                <div class="mt-2 text-sm text-gray-400">Videos</div>
+                            </a>
+
+                            <!-- Projects -->
+                            <a href="{{route('doc1')}}"
+                               class="flex h-20 w-full flex-col items-center justify-center rounded-md border border-dashed border-gray-200 transition-colors duration-100 ease-in-out hover:border-gray-400/80">
+                                <div class="flex flex-row items-center justify-center">
+
+
+                                    <svg height="24" width="24" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:none;stroke:#020202;stroke-miterlimit:10;stroke-width:1.91px;}</style></defs><line class="cls-1" x1="6.27" y1="14.86" x2="13.91" y2="14.86"></line><line class="cls-1" x1="6.27" y1="11.05" x2="13.91" y2="11.05"></line><line class="cls-1" x1="6.27" y1="18.68" x2="13.91" y2="18.68"></line><polygon class="cls-1" points="16.77 8.18 16.77 22.5 3.41 22.5 3.41 5.32 13.91 5.32 16.77 8.18"></polygon><polyline class="cls-1" points="16.77 18.68 20.59 18.68 20.59 4.36 17.73 1.5 7.23 1.5 7.23 5.32"></polyline></g></svg>
+
+                                    <span class="font-bold text-gray-600">
+                                          @if(auth()->user()->role_id == 1)
+                                            {{\App\Models\Document::count()}}
+                                        @elseif(auth()->user()->role_id == 2)
+                                            {{\App\Models\Document::where('user_id', auth()->user()->id)->count()}}
+                                        @endif
+                                    </span>
+                                </div>
+
+                                <div class="mt-2 text-sm text-gray-400">Documents</div>
+                            </a>
+                        </div>
+                    @endif
+
                 </div>
             </div>
         </div>

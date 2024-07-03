@@ -17,9 +17,15 @@
     </head>
     <body class="font-sans antialiased" >
     <div class="min-h-[65vh]">
-        <div class="px-4 py-2 sticky top-0 shadow-lg w-full bg-white mx-auto md:px-24 lg:px-8 z-50">
-            <livewire:layout.navigation />
-        </div>
+      @if(auth()->user()->role_id == 0)
+            <div class="px-4 py-2 sticky top-0 shadow-lg w-full bg-white mx-auto md:px-24 lg:px-8 z-50">
+                <livewire:layout.navigation />
+            </div>
+        @else
+            <div class=" sticky top-0  bg-white mx-auto  z-50">
+          <livewire:layout.navigation/>
+            </div>
+        @endif
             <!-- Page Content -->
             <main>
                 {{ $slot }}
