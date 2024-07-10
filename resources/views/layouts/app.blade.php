@@ -19,7 +19,7 @@
     <div class="min-h-[65vh]">
       @if(auth()->user()->role_id == 0)
             <div class="px-4 py-2 sticky top-0 shadow-lg w-full bg-white mx-auto md:px-24 lg:px-8 z-50">
-                <livewire:layout.navigation />
+                <livewire:layout.navigation2 />
             </div>
         @else
             <div class=" sticky top-0  bg-white mx-auto  z-50">

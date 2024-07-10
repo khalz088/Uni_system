@@ -145,6 +145,23 @@ new class extends Component
                                 </button>
                             </div>
                         </li>
+                        <li>
+                            <div  class="  p-2 text-gray-900 rounded-lg
+                     group">
+                                <button class="w-full flex items-center ">
+                                    <div class=" text-start">
+
+                                        <svg height="30"  width="30" fill="#000000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="table-add"> <path d="M22,12.1V6V4V0H-1v4v2v18h14h2h2c3.9,0,7-3.1,7-7C24,15.1,23.2,13.4,22,12.1z M20,10h-5V6h5V10z M10.1,18 c0.2,1.6,1,2.9,2,4H8v-4H10.1z M10.1,16H8v-4h4.1C11,13.1,10.3,14.4,10.1,16z M6,16H1v-4h5V16z M13,6v4H8V6H13z M1,2h19v2H1V2z M6,6v4H1V6H6z M1,18h5v4H1V18z M17,22c-2.8,0-5-2.2-5-5s2.2-5,5-5s5,2.2,5,5S19.8,22,17,22z"></path> <polygon points="18,13.6 16,13.6 16,16 13.6,16 13.6,18 16,18 16,20.4 18,20.4 18,18 20.4,18 20.4,16 18,16 "></polygon> </g> </g></svg>
+
+                                    </div>
+                                    <div class="flex-1 ms-3 whitespace-nowrap">
+                                        <x-nav-link :href="route('user.index')" :active="request()->routeIs('user.index')">
+                                            {{ __('Add User') }}
+                                        </x-nav-link>
+                                    </div>
+                                </button>
+                            </div>
+                        </li>
                     @endif
 
                 </ul>
